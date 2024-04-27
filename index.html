@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>テキスト追加</title>
+    <style>
+      #box1,
+      #box2 {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="box1" placeholder="テキストを入力" />
+    <button onclick="addText()">決定</button>
+    <div id="box2"></div>
+
+    <script>
+      function addText() {
+        // 入力ボックスの値を取得
+        var text = document.getElementById("box1").value;
+
+        // テキストが空でない場合
+        if (text.trim() !== "") {
+          // 新しい要素を作成
+          var newElement = document.createElement("div");
+          newElement.textContent = text;
+
+          // ボックス2に追加
+          document.getElementById("box2").appendChild(newElement);
+
+          // 入力ボックスを空にする
+          document.getElementById("box1").value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
